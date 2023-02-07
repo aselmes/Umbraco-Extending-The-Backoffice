@@ -1,0 +1,13 @@
+<div class="uui-font uui-text" ng-controller="communityDashboard">
+    <uui-box localize="headline" headline="@test_description">
+        <p><localize key="test_paragraph"></localize></p>
+        <!-- For each community member -->
+        <a ng-repeat="communityMember in community" ng-href="#/content/content/edit/{{communityMember.id}}" style="display:inline-block;max-width:10%;margin:12px">
+            <uui-card-media name="{{communityMember.name}}">
+                <uui-tag slot="tag" size="s" color="danger" ng-If="communityMember.outdated">{{communityMember.diff}}</uui-tag>
+                <uui-tag slot="tag" size="s" color="default" ng-If="!communityMember.outdated">{{communityMember.diff}}</uui-tag>
+                <img src="{{communityMember.avatar | EmbedUrl }}" />
+            </uui-card-media>
+        </a>
+    </uui-box>
+</div>

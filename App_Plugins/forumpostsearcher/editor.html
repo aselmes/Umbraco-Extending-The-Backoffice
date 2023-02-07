@@ -1,0 +1,21 @@
+﻿<div ng-controller="forumpostEditorController">
+    <input type="text" class="span9"
+           ng-model="model.term"
+           ng-keyup="search(model.term)" />
+    <ul>
+        <li ng-repeat="result in model.results">
+            <a href ng-click="add(result)">
+                {{result.Fields.nodeName}}
+            </a>
+        </li>
+    </ul>
+    <hr />
+    <h4>Selected Forum Posts:</h4>
+    <ul>
+        <li ng-repeat="result in model.value">
+            <a href="" ng-click="remove($index)">
+                {{result.Fields.nodeName}}
+            </a>
+        </li>
+    </ul>
+</div>

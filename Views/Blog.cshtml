@@ -1,0 +1,34 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.Blog>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    Layout = "BasicNav.cshtml";
+    string cssCurrent = "nav-current";
+}
+<section id="single-content" class="bg-white">
+    <div class="container">
+        <div class="section-content blog-content">
+
+            <div class="row">
+                 <div class="col-md-2 mt-4 align-self-start">
+                     <div class="side-nav">
+                         @if (Model.RelatedForumPosts != null)
+                         {
+                             <h3>Related Forum Posts</h3>
+                             foreach (dynamic item in Model.RelatedForumPosts)
+                             {
+                                 <a href="https://our.umbraco.org/@item.Fields.url">@item.Fields.nodeName</a>
+                             }
+                         }
+                     </div>
+
+                </div>
+                <div class="col-md-8 mt-4">
+                    @Model.Summary
+                    <hr />
+                    @Model.BodyText
+                </div> 
+            </div>
+        </div>
+    </div>
+</section>

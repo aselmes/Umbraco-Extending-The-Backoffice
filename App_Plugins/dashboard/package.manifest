@@ -1,0 +1,13 @@
+{
+    "dashboards": [
+        {
+            "alias": "activeCommunityMembers",
+            "view": "/App_Plugins/dashboard/dashboard.html",
+            "sections": [ "content" ],
+            "weight": -10
+        }
+    ],
+    "javascript": [
+        "/App_Plugins/dashboard/dashboard.controller.js"
+    ]
+}

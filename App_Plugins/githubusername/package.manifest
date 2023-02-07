@@ -1,0 +1,15 @@
+{
+    "$schema": "http://json.schemastore.org/package.manifest",
+    "propertyEditors": [
+        {
+            "name": "GitHub Username",
+            "alias": "my.GitHubUsername",
+            "editor": {
+                "view": "~/App_Plugins/githubusername/editor.html"
+            }
+        }
+    ],
+    "css": [
+        "~/App_Plugins/githubusername/editor.css"
+    ]
+}

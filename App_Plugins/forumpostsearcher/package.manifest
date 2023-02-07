@@ -1,0 +1,25 @@
+﻿{
+    "propertyEditors": [
+        {
+            "name": "Forum Post Searcher",
+            "alias": "umb.post.searcher",
+            "editor": {
+                "view": "~/App_Plugins/forumpostsearcher/editor.html",
+                "valueType": "JSON"
+            },
+            "prevalues": {
+                "fields": [
+                    {
+                        "label": "Maximum number of posts",
+                        "description": "Only allow this number of posts to be added",
+                        "key": "maxPosts",
+                        "view": "number"
+                    }
+                ]
+            }
+        }
+    ],
+    "javascript": [
+        "~/App_Plugins/forumpostsearcher/editor.controller.js"
+    ]
+}

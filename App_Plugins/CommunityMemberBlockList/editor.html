@@ -1,0 +1,34 @@
+<section class="block" style="box-shadow: inset 0 0 0 1000px #{{bgColor}}90; background-color: #{{bgColor}};background-image: url('{{imageUrl}}');" ng-controller="communityMemberController" ng-click="block.edit()">
+    <div class="content">
+        <header>
+            <h1 style="color:#{{textColor}}">{{block.data.title}}</h1>
+        </header>
+        <p style="color:#{{textColor}}">{{block.data.description}}</p>
+        <div class="actions" ng-if="block.data.email">
+            <a href="mailto:{{block.data.email}}" style="color:#{{textColor}}">Get in  touch</a>
+        </div>
+        <figure class="centered" ng-if="block.data.gitHubProfileImage">
+            <div class="github-username thumbnail" style="width: 220px">
+                <img class="img-circle"
+                     ng-src="https://unavatar.io/github/{{block.data.gitHubProfileImage}}" />
+            </div>
+        </figure>
+    </div>
+</section>
+
+<style>
+    .centered {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .block {
+        background-size: cover;
+        padding: 2rem;
+        z-index: 0;
+        max-width: 640px;
+        position: relative;
+    }
+</style>

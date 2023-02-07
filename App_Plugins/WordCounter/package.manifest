@@ -1,0 +1,22 @@
+﻿{
+    // define the content apps you want to create
+    "contentApps": [
+        {
+            "name": "Word Counter",
+            "alias": "wordCounter",
+            "weight": 0,
+            "icon": "icon-calculator",
+            "view": "/App_Plugins/WordCounter/wordcounter.html",
+            "show": [
+                "+content/blog", // show for content type 'blog'
+                "-content/*", // hide for all other content types
+                "-media/*", // hide for all media types
+                "+role/admin" // show for ‘admin’ user group
+
+            ]
+        }
+    ],
+    "javascript": [
+        "/App_Plugins/WordCounter/wordcounter.controller.js"
+    ]
+}

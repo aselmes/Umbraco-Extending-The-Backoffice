@@ -1,0 +1,27 @@
+﻿<div class="umb-box" ng-controller="wordCounterApp as vm">
+    <uui-box headline="Amount of words for each property">
+        <uui-ref-list>
+            <uui-ref-node-data-type ng-repeat="(key, value) in vm.propertyWordCount" name="{{key}}" ng-if="value > 0"
+                                    alias="words: {{value}}">
+            </uui-ref-node-data-type>
+            <uui-ref-node-data-type disabled="true" ng-repeat="(key, value) in vm.propertyWordCount" name="{{key}}" ng-if="value < 1"
+                                    alias="Empty">
+            </uui-ref-node-data-type>
+        </uui-ref-list>
+        <div style="margin-top: 18px;display:flex;align-items:center;justify-content:space-between;max-width:600px">
+            <uui-card-content-node name="{{vm.CurrentNodeAlias}}" style="max-width: 200px;">
+                <ul style="list-style: none; padding-inline-start: 0px; margin: 0;">
+                    <li>
+                        <span style="font-weight: 700">Properties:</span> {{vm.TotalProperties}}
+                    </li>
+                    <li>
+                        <span style="font-weight: 700">Node ID:</span> {{vm.CurrentNodeId}}
+                    </li>
+                </ul>
+            </uui-card-content-node>
+            <uui-card-user name="{{vm.UserName}}" style="max-width: 200px;">
+                <div>Current user</div>
+            </uui-card-user>
+        </div>
+    </uui-box>
+</div>
